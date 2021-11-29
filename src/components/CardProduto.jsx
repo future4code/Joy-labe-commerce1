@@ -5,20 +5,24 @@ const ProdutoContainer = styled.div`
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  
 `;
 
 const ItensProduto = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px;
-
-  p {
+ p {
     margin: 4px 0;
   }
 `
 
 const PhotoProduto = styled.img`
   width: 100%;
+`
+const CardDoBotao = styled.button`
+  align-self: center;
+  margin-top: 4px;
 `
 
 export default class CardProduto extends React.Component {
@@ -36,7 +40,9 @@ render(){
           <ItensProduto>
           <p>Produto 1</p>
           <p>R$ 100,00</p>
-         <button>Adicionar ao carrinho</button>
+          <CardDoBotao>
+         Adicionar ao carrinho
+         </CardDoBotao>
          </ItensProduto>
         </ProdutoContainer>
     </div>
