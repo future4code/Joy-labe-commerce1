@@ -2,8 +2,16 @@ import React from 'react';
 import Carrinho from './components/carrinho';
 import Produtos from './components/produtos';
 import Filtro from './components/filtro';
+import styled from 'styled-components';
 
 //import styled from 'styled-components';
+
+const AppCont = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: 16px;
+  gap: 8px;
+`;
 
 const produtos = [      {
   id: 1,
@@ -79,15 +87,20 @@ render(){
 
   return (
 
-
+<AppCont>
     <div>
       
       E - Commerce Rocket Star
     <Filtro />
+    </div>
+    <div>
     <Produtos />
+    </div>
+    <div>
     <Carrinho />
 
     </div>
+    </AppCont>
   );
 }
 
