@@ -4,7 +4,7 @@ import React from 'react';
 
 
 
-export default class Filtro extends React.Component {
+export  class Filtro extends React.Component {
 
 
 
