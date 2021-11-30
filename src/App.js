@@ -60,10 +60,10 @@ export default class App extends React.Component {
     buscaPorNome: "",
     cestaDeProdutos: [
       {
-        id: 10,
-        nome: "Foguete da Missão Apollo 11",
-        preco: 10000.0,
-        imagem: "https://picsum.photos/200/200",
+        id: 6,
+        nome: "Foguete da Missão Apollo 16",
+        preco: 600.0,
+        imagem: "https://picsum.photos/200/200"
       }
 
     ]
