@@ -40,7 +40,7 @@ render(){
           <ItensProduto>
           <p>Produto 1</p>
           <p>R$ 100,00</p>
-          <CardDoBotao>
+          <CardDoBotao  onClick={this.adicionaAoCarrinho}>
          Adicionar ao carrinho
          </CardDoBotao>
          </ItensProduto>
