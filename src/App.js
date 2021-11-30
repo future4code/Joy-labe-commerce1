@@ -113,7 +113,7 @@ export default class App extends React.Component {
     localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
   }
   removeDoCarrinho = id => {
-    // Apaga um post da lista
+    // tentativa de apagar carrinho
     const novaCesta = this.state.cestaDeProdutos.filter(nome => {
       return id !== nome.id;
     });
