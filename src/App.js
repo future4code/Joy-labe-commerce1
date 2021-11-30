@@ -1,5 +1,5 @@
 import React from 'react';
-import Carrinho from './components/carrinho';
+import{ Carrinho } from './components/carrinho';
 import Produtos from './components/produtos';
 import Filtro from './components/filtro';
 import styled from 'styled-components';
