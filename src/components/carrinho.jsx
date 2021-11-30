@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const ContainerCarrinho = styled.div`
 border-radius:10px;
   border: 2px solid black;
@@ -20,7 +21,7 @@ export class Carrinho extends React.Component {
 
         <div>
         
-        <button>Remover</button>
+        <button  onClick={() => this.props.removeDoCarrinho(this.props.produto.id)}>Remover</button>
         </div>
         Valor total: R$
       </ContainerCarrinho>

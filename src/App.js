@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carrinho } from './components/carrinho';
-import Produtos from './components/produtos';
-import Filtro from './components/filtro';
+import { Produtos } from './components/produtos';
+import { Filtro } from './components/filtro';
 import styled from 'styled-components';
 
 //import styled from 'styled-components';
@@ -13,7 +13,7 @@ const AppCont = styled.div`
   gap: 8px;
 `;
 
-const produtos = [{
+const produto = [{
   id: 1,
   nome: "Foguete da Missão Apollo 11",
   preco: 100.0,
@@ -70,38 +70,38 @@ export default class App extends React.Component {
   };
 
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.inputValue !== this.state.cestaDeProdutos)
-      localStorage.setItem("cesta", this.state.cestaDeProdutos)
-    console.log("cestaDeProdutos salva")
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.inputValue !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos)
+  //   console.log("cestaDeProdutos salva")
 
-    if (prevState.filtro !== this.state.cestaDeProdutos)
-      localStorage.setItem("cesta", this.state.cestaDeProdutos)
-    console.log("status cesta")
+  //   if (prevState.filtro !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos)
+  //   console.log("status cesta")
 
-    if (prevState.tarefas !== this.state.cestaDeProdutos)
-      localStorage.setItem("cesta", this.state.cestaDeProdutos.id)
-    console.log("array")
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos.id)
+  //   console.log("array")
 
-    if (prevState.tarefas !== this.state.cestaDeProdutos)
-      localStorage.setItem("cesta", this.state.cestaDeProdutos.nome)
-    console.log("array")
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos.nome)
+  //   console.log("array")
 
-    if (prevState.tarefas !== this.state.cestaDeProdutos)
-      localStorage.setItem("tarefa", this.state.cestaDeProdutos.preco)
-    console.log("array")
-  };
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("tarefa", this.state.cestaDeProdutos.preco)
+  //   console.log("array")
+  // };
 
-  //enviar JSON quando adicionar carrinho
-  componentDidMount() {
-    this.adicionaAoCarrinho();
-    const idLS = localStorage.getItem("id") || "";
-    const nomeLS = localStorage.getItem("nome") || "";
-    const precoLS = localStorage.getItem("preco") || "";
-    this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
-  }
+  // //enviar JSON quando adicionar carrinho
+  // componentDidMount() {
+  //   this.adicionaAoCarrinho();
+  //   const idLS = localStorage.getItem("id") || "";
+  //   const nomeLS = localStorage.getItem("nome") || "";
+  //   const precoLS = localStorage.getItem("preco") || "";
+  //   this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
+  // }
 
-  adicionaAoCarrinho = () => {
+  adicionaAoCarrinho = (props) => {
     const AdicionaProduto = {
       id: this.state.cestaDeProdutos,
       nome: this.state.cestaDeProdutos,
@@ -110,10 +110,10 @@ export default class App extends React.Component {
     const novaCesta = [...this.state.cestaDeProdutos, AdicionaProduto]
     this.setState({ cestaDeProdutos: novaCesta })
     console.log("ok produto encestado!!")
-    localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
-  }
+  //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
+   }
   removeDoCarrinho = id => {
-    // Apaga um post da lista
+    
     const novaCesta = this.state.cestaDeProdutos.filter(nome => {
       return id !== nome.id;
     });

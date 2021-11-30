@@ -1,6 +1,6 @@
 import React from 'react';
-import  CardProduto  from './CardProduto';
 import styled from 'styled-components';
+import  CardProduto   from './CardProduto';
 
 const ContainerProduto = styled.div`
 
@@ -19,7 +19,7 @@ const GradeProdutos = styled.div`
   gap: 16px;
   padding: 16px;
 `
-export default class Produtos extends React.Component {
+export  class Produtos extends React.Component {
 
 
 render(){

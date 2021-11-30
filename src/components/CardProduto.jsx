@@ -31,7 +31,7 @@ export default class CardProduto extends React.Component {
 
 render(){
 // filtros e map
-const produtos = this.props.produtos
+const produto = this.props.produto
 
   return (
 
@@ -42,7 +42,7 @@ const produtos = this.props.produtos
           <ItensProduto>
           <p>Produto 1</p>
           <p>R$ 100,00</p>
-          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produtos.id)}>
+          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(this.props.produto.id)}>
          Adicionar ao carrinho
          </CardDoBotao>
          </ItensProduto>
