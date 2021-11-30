@@ -131,7 +131,6 @@ export default class App extends React.Component {
       <AppCont>
         <div>
 
-          E - Commerce Rocket Star
           <Filtro />
         </div>
         <div>
