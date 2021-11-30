@@ -8,14 +8,18 @@ border-radius:10px;
 `;
 
 export class Carrinho extends React.Component {
+ 
+
   render() {
+    
     return (
       <ContainerCarrinho>
         <div>
           <h3>Carrinho:</h3>
         </div>
-        
+
         <div>
+        
         <button>Remover</button>
         </div>
         Valor total: R$

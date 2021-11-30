@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const ProdutoContainer = styled.div`
   border: 1px solid black;
   display: flex;
@@ -30,6 +31,7 @@ export default class CardProduto extends React.Component {
 
 render(){
 // filtros e map
+const produtos = this.props.produtos
 
   return (
 
@@ -40,7 +42,7 @@ render(){
           <ItensProduto>
           <p>Produto 1</p>
           <p>R$ 100,00</p>
-          <CardDoBotao  onClick={this.adicionaAoCarrinho}>
+          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produtos.id)}>
          Adicionar ao carrinho
          </CardDoBotao>
          </ItensProduto>
