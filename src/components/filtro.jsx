@@ -27,11 +27,11 @@ export class Filtro extends React.Component {
 
         <ContainerInput>
           <p>Valor mínimo:</p>
-          <input></input>
+          <input type='number'></input>
         </ContainerInput>
         <ContainerInput>
           <p>Valor máximo:</p>
-          <input></input>
+          <input type='number'></input>
         </ContainerInput>
         <ContainerInput>
           <p>Busca por nome:</p>
