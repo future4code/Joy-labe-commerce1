@@ -18,32 +18,32 @@ const ItensProduto = styled.div`
   }
 `
 
-const Imagem = styled.img`
-  width: 100%;
-`
+// const Imagem = styled.img`
+//   width: 100%;
+// `
+
 const CardDoBotao = styled.button`
   align-self: center;
   margin-top: 4px;
 `
 
-
-export  class CardProduto extends React.Component {
-// filtros e map
+export class CardProduto extends React.Component {
 
   render() {
-    const produtos = this.props.produtos
-    return <ProdutoContainer>
-      <Imagem>
-      <img src={this.props.imagem}/>
-        </Imagem>
-      <ItensProduto>
-        <p>{this.props.nome}</p>
-        <p>R${this.props.preco},00</p>
-        <CardDoBotao onClick={() => this.props.adicionaAoCarrinho(this.props.id)}>
-          Adicionar ao carrinho
-        </CardDoBotao>
-      </ItensProduto>
-    </ProdutoContainer>
+    const produto = this.props.produtos;
+    return (
+      <ProdutoContainer>
+{/* 
+        <img src={produto.imagem} /> 
+         */}
+        <ItensProduto>
+          <p>Super</p>
+          <p>R1,00</p>
+          <CardDoBotao onClick={() => this.props.adicionaAoCarrinho(produto.id)} >
+            Adicionar ao carrinho
+          </CardDoBotao>
+        </ItensProduto>
+      </ProdutoContainer>
+    )
   }
 }
-

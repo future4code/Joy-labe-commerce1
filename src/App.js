@@ -149,12 +149,13 @@ this.setState({cestaDeProdutos:novaCestaDeProduto })
         </div>
         <div>
           <Produtos 
-          
+          produtos={produtos}
+          adicionaAoCarrinho={this.adicionaAoCarrinho}
           />
         </div>
         <div>
           <Carrinho 
-           productsInCart={this.state.cestaDeProdutos}
+           cestaDeProdutos={this.state.cestaDeProdutos}
           
           />
  
