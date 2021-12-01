@@ -59,8 +59,7 @@ export default class App extends React.Component {
     valorMaximo: "",
     valorMinimo: "",
     buscaPorNome: "",
-    cestaDeProdutos: [],
-    ]
+    cestaDeProdutos: []
   };
 
 
