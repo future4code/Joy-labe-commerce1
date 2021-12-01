@@ -7,7 +7,7 @@ const ProdutoContainer = styled.div`
   display: flex;
   flex-direction: column;
   
-`;
+`
 
 const ItensProduto = styled.div`
   display: flex;
@@ -28,21 +28,19 @@ const CardDoBotao = styled.button`
 
 export class CardProduto extends React.Component {
 
-
-render(){
-// filtros e map
-let produto = this.props.produto
-console.log("teste",this.props)
-  return  <ProdutoContainer>
-          <PhotoProduto src='https://picsum.photos/1000/740' alt='Imagem do produto' />
+  render() {
+    const produto = this.props.produto;
+    return (
+    <ProdutoContainer>
+          <PhotoProduto src='https://picsum.photos/1000/740'/>
           <ItensProduto>
-          <p>100</p>
+          <p>{produto.nome}</p>
         <p>R1,00</p>
-          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produto.Id)}>
+          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produto.id)} >
          Adicionar ao carrinho
          </CardDoBotao>
          </ItensProduto>
         </ProdutoContainer>
-
-}
-}
+    )
+    }
+  }

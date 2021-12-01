@@ -96,23 +96,46 @@ export default class App extends React.Component {
 
   adicionaAoCarrinho = (produtoId) => {
     const cestaDeProdutos = this.state.cestaDeProdutos.find(
-      (produto) => produtoId===produto.id )
-      console.log("ok produto encestado!!")
-    }
+      (produto) => produtoId === produto.id )
+      
+if(cestaDeProdutos){
+const novaCestaDeProduto = this.state.cestaDeProdutos.map((produto) => {
+ if(produtoId === produto.id) {
+   return {
+     ...produto,
+     quantidade: produto.quantidade + 1
+   };
+ }
+ return produto
+})
+
+this.setState({cestaDeProdutos:novaCestaDeProduto })
+} else {
+  const produtoAdicionado = produtos.find((produto) => produtoId === produto.id)
+const novaCestaDeProduto = [
+  ...this.state.cestaDeProdutos,
+  {...produtoAdicionado, quantidade:1}
+]
+this.setState({cestaDeProdutos:novaCestaDeProduto })
+}
+}
+
+
+    
     
     
   //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
    
-  removeDoCarrinho = id => {
+  // removeDoCarrinho = id => {
 
-    // tentativa de apagar carrinho
+  //   // tentativa de apagar carrinho
 
-    const novaCesta = this.state.cestaDeProdutos.filter(nome => {
-      return id !== nome.id;
-    });
+  //   const novaCesta = this.state.cestaDeProdutos.filter(nome => {
+  //     return id !== nome.id;
+  //   });
 
-    this.setState({ cestaDeProdutos: novaCesta });
-  };
+  //   this.setState({ cestaDeProdutos: novaCesta });
+  // };
 
   render() {
     // filtros e map
