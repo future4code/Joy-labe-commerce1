@@ -18,7 +18,7 @@ const ItensProduto = styled.div`
   }
 `
 
-const PhotoProduto = styled.img`
+const Imagem = styled.img`
   width: 100%;
 `
 const CardDoBotao = styled.button`
@@ -26,21 +26,24 @@ const CardDoBotao = styled.button`
   margin-top: 4px;
 `
 
-export class CardProduto extends React.Component {
+
+export  class CardProduto extends React.Component {
+// filtros e map
 
   render() {
-    const produto = this.props.produto;
-    return (
-    <ProdutoContainer>
-          <PhotoProduto src='https://picsum.photos/1000/740'/>
-          <ItensProduto>
-          <p>{produto.nome}</p>
-        <p>R1,00</p>
-          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produto.id)} >
-         Adicionar ao carrinho
-         </CardDoBotao>
-         </ItensProduto>
-        </ProdutoContainer>
-    )
-    }
+    const produtos = this.props.produtos
+    return <ProdutoContainer>
+      <Imagem>
+      <img src={this.props.imagem}/>
+        </Imagem>
+      <ItensProduto>
+        <p>{this.props.nome}</p>
+        <p>R${this.props.preco},00</p>
+        <CardDoBotao onClick={() => this.props.adicionaAoCarrinho(this.props.id)}>
+          Adicionar ao carrinho
+        </CardDoBotao>
+      </ItensProduto>
+    </ProdutoContainer>
   }
+}
+
