@@ -19,6 +19,7 @@ const GradeProdutos = styled.div`
   gap: 16px;
   padding: 16px;
 `
+
 export  class Produtos extends React.Component {
 
 

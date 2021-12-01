@@ -18,36 +18,29 @@ const ItensProduto = styled.div`
   }
 `
 
-const PhotoProduto = styled.img`
-  width: 100%;
-`
+// const PhotoProduto = styled.img`
+//   width: 100%;
+// `
 const CardDoBotao = styled.button`
   align-self: center;
   margin-top: 4px;
 `
 
 export default class CardProduto extends React.Component {
-
-
-render(){
 // filtros e map
 const produto = this.props.produto
 
-  return (
-
-
-    <div>
-        <ProdutoContainer>
-          <PhotoProduto src='https://picsum.photos/1000/740' alt='Imagem do produto' />
-          <ItensProduto>
-          <p>Produto 1</p>
-          <p>R$ 100,00</p>
-          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(this.props.produto.id)}>
-         Adicionar ao carrinho
-         </CardDoBotao>
-         </ItensProduto>
-        </ProdutoContainer>
-    </div>
-  );
-}
+  render() {
+    const produtos = this.props.produtos
+    return <ProdutoContainer>
+      <img src={this.props.imagem}/>
+      <ItensProduto>
+        <p>{this.props.nome}</p>
+        <p>R${this.props.preco},00</p>
+        <CardDoBotao onClick={() => this.props.adicionaAoCarrinho(this.props.id)}>
+          Adicionar ao carrinho
+        </CardDoBotao>
+      </ItensProduto>
+    </ProdutoContainer>
+  }
 }

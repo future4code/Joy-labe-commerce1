@@ -13,44 +13,45 @@ const AppCont = styled.div`
   gap: 8px;
 `;
 
-const produto = [{
-  id: 1,
-  nome: "Foguete da Missão Apollo 11",
-  preco: 100.0,
-  imagem: "https://picsum.photos/200/200",
-},
-{
-  id: 2,
-  nome: "Foguete da Missão Apollo 12",
-  preco: 200.0,
-  imagem: "https://picsum.photos/200/200",
-}, {
-  id: 3,
-  nome: "Foguete da Missão Apollo 13",
-  preco: 300.0,
-  imagem: "https://picsum.photos/200/200",
-},
-{
-  id: 4,
-  nome: "Foguete da Missão Apollo 14",
-  preco: 400.0,
-  imagem: "https://picsum.photos/200/200",
-},
-{
-  id: 5,
-  nome: "Foguete da Missão Apollo 15",
-  preco: 500.0,
-  imagem: "https://picsum.photos/200/200",
-}, {
-  id: 6,
-  nome: "Foguete da Missão Apollo 16",
-  preco: 600.0,
-  imagem: "https://picsum.photos/200/200",
-}
-
+const produtos = [
+  {
+    id: 1,
+    nome: 'Falcon 9',
+    preco: 100.00,
+    imagem: 'https://engenhariaaeronautica.com.br/wp-content/uploads/2020/07/estrutura-falcon9-2-768x768.jpg'
+  },
+  {
+    id: 2,
+    nome: 'Starship',
+    preco: 200.00,
+    imagem: 'https://tecnoblog.net/meiobit/wp-content/uploads/2019/09/20190930efvbpwuxuaauy5w.jpg'
+  },
+  {
+    id: 3,
+    nome: 'Super Heavy',
+    preco: 300.00,
+    imagem: 'https://i.redd.it/2rx75mrsez821.png'
+  },
+  {
+    id: 4,
+    nome: 'Blue Origin',
+    preco: 400.00,
+    imagem: 'https://img.ibxk.com.br/2021/08/26/26114401962259.jpg'
+  },
+  {
+    id: 5,
+    nome: 'SpaceX SN15',
+    preco: 350.00,
+    imagem: 'https://1734811051.rsc.cdn77.org/data/images/full/372411/spacex-makes-way-for-its-sn8-prototype-by-purposely-destroying-starship-tank.png'
+  },
+  {
+    id: 6,
+    nome: 'Saturn V',
+    preco: 150.00,
+    imagem: 'https://static.turbosquid.com/Preview/2019/10/27__11_34_00/NASA1.pngB5471682-02E0-42CC-83F4-BA2BBD0BE03AZoom.jpg'
+  }
 
 ]
-
 
 export default class App extends React.Component {
   // estado
@@ -58,14 +59,7 @@ export default class App extends React.Component {
     valorMaximo: "",
     valorMinimo: "",
     buscaPorNome: "",
-    cestaDeProdutos: [
-      {
-        id: 6,
-        nome: "Foguete da Missão Apollo 16",
-        preco: 600.0,
-        imagem: "https://picsum.photos/200/200"
-      }
-
+    cestaDeProdutos: [],
     ]
   };
 
@@ -138,7 +132,7 @@ export default class App extends React.Component {
         </div>
         <div>
           <Carrinho />
-     
+ 
         </div>
       </AppCont>
     );
