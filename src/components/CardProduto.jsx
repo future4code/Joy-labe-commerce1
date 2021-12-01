@@ -28,6 +28,7 @@ const CardDoBotao = styled.button`
 
 export default class CardProduto extends React.Component {
 // filtros e map
+const produto = this.props.produto
 
   render() {
     const produtos = this.props.produtos

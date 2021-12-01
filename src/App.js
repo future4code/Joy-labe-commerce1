@@ -50,8 +50,8 @@ const produtos = [
     preco: 150.00,
     imagem: 'https://static.turbosquid.com/Preview/2019/10/27__11_34_00/NASA1.pngB5471682-02E0-42CC-83F4-BA2BBD0BE03AZoom.jpg'
   }
-]
 
+]
 
 export default class App extends React.Component {
   // estado
@@ -60,6 +60,7 @@ export default class App extends React.Component {
     valorMinimo: "",
     buscaPorNome: "",
     cestaDeProdutos: [],
+    ]
   };
 
 
@@ -123,9 +124,7 @@ export default class App extends React.Component {
 
       <AppCont>
         <div>
-          <header>
-        E - Commerce Rocket Star
-          </header>
+
           <Filtro />
         </div>
         <div>
@@ -133,7 +132,7 @@ export default class App extends React.Component {
         </div>
         <div>
           <Carrinho />
-     
+ 
         </div>
       </AppCont>
     );
