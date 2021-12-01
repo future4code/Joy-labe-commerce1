@@ -59,8 +59,7 @@ export default class App extends React.Component {
     valorMaximo: "",
     valorMinimo: "",
     buscaPorNome: "",
-    cestaDeProdutos: [],
-    ]
+    cestaDeProdutos: []
   };
 
 
@@ -128,10 +127,15 @@ export default class App extends React.Component {
           <Filtro />
         </div>
         <div>
-          <Produtos />
+          <Produtos 
+          
+          />
         </div>
         <div>
-          <Carrinho />
+          <Carrinho 
+           productsInCart={this.state.cestaDeProdutos}
+          
+          />
  
         </div>
       </AppCont>
