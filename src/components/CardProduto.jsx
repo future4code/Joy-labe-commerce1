@@ -7,7 +7,7 @@ const ProdutoContainer = styled.div`
   display: flex;
   flex-direction: column;
   
-`;
+`
 
 const ItensProduto = styled.div`
   display: flex;
@@ -18,21 +18,24 @@ const ItensProduto = styled.div`
   }
 `
 
-// const PhotoProduto = styled.img`
-//   width: 100%;
-// `
+const Imagem = styled.img`
+  width: 100%;
+`
 const CardDoBotao = styled.button`
   align-self: center;
   margin-top: 4px;
 `
 
-export default class CardProduto extends React.Component {
+
+export  class CardProduto extends React.Component {
 // filtros e map
 
   render() {
     const produtos = this.props.produtos
     return <ProdutoContainer>
+      <Imagem>
       <img src={this.props.imagem}/>
+        </Imagem>
       <ItensProduto>
         <p>{this.props.nome}</p>
         <p>R${this.props.preco},00</p>
@@ -43,3 +46,4 @@ export default class CardProduto extends React.Component {
     </ProdutoContainer>
   }
 }
+
