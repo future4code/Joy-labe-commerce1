@@ -32,13 +32,13 @@ export class CardProduto extends React.Component {
 render(){
 // filtros e map
 let produto = this.props.produto
-//console.log("teste",this.props)
+console.log("teste",this.props)
   return  <ProdutoContainer>
           <PhotoProduto src='https://picsum.photos/1000/740' alt='Imagem do produto' />
           <ItensProduto>
           <p>100</p>
         <p>R1,00</p>
-          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho()}>
+          <CardDoBotao  onClick={() => this.props.adicionaAoCarrinho(produto.Id)}>
          Adicionar ao carrinho
          </CardDoBotao>
          </ItensProduto>
