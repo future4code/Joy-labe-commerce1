@@ -148,10 +148,15 @@ this.setState({cestaDeProdutos:novaCestaDeProduto })
           <Filtro />
         </div>
         <div>
-          <Produtos />
+          <Produtos 
+          
+          />
         </div>
         <div>
-          <Carrinho />
+          <Carrinho 
+           productsInCart={this.state.cestaDeProdutos}
+          
+          />
  
         </div>
       </AppCont>
