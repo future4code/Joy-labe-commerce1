@@ -94,17 +94,15 @@ export default class App extends React.Component {
   //   this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
   // }
 
-  adicionaAoCarrinho = (props) => {
-    const AdicionaProduto = {
-      id: this.state.cestaDeProdutos,
-      nome: this.state.cestaDeProdutos,
-      preco: this.state.cestaDeProdutos
+  adicionaAoCarrinho = (produtoId) => {
+    const cestaDeProdutos = this.state.cestaDeProdutos.find(
+      (produto) => produtoId===produto.id )
+      console.log("ok produto encestado!!")
     }
-    const novaCesta = [...this.state.cestaDeProdutos, AdicionaProduto]
-    this.setState({ cestaDeProdutos: novaCesta })
-    console.log("ok produto encestado!!")
+    
+    
   //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
-   }
+   
   removeDoCarrinho = id => {
 
     // tentativa de apagar carrinho
