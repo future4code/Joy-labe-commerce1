@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CardProduto }  from './CardProduto';
+import listaNaves from "../data/naves.json"
+import  { Itens }   from './CardProdutos/CardProduto';
 
 const ContainerProduto = styled.div`
 
-`;
+`
 
 const HeaderProduto = styled.div`
   display: flex;
@@ -20,11 +21,13 @@ const GradeProdutos = styled.div`
   padding: 16px;
 `
 
-export  class Produtos extends React.Component {
-
+export class Produtos extends React.Component{
+  
+  state = {
+    naves: listaNaves
+  }
 
 render(){
-// filtros e map
 
   return <ContainerProduto>
   <HeaderProduto>
@@ -38,12 +41,9 @@ render(){
     </label>
   </HeaderProduto>
   <GradeProdutos>
-     <CardProduto />
-     <CardProduto />
-     <CardProduto />
-     <CardProduto />
-     <CardProduto />
-     <CardProduto />
+     {this.state.naves.map(nave => {
+       return <Itens key={nave.id} nave={nave} />
+     })}
   </GradeProdutos>
 </ContainerProduto>
 }
