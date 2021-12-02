@@ -1,27 +1,25 @@
-import React from 'react';
-import { Carrinho } from './components/carrinho';
-import { Produtos } from './components/produtos';
-import { Filtro } from './components/filtro';
-import styled from 'styled-components';
+import React from 'react'
+import { Carrinho } from './components/carrinho'
+import { Produtos } from './components/produtos'
+import { Filtro } from './components/filtro'
+import { ContainerGeral } from './components/styles'
+import { Main } from './components/styles'
+import { Left } from './components/styles'
+import { Middle } from './components/styles'
+import { Right } from './components/styles'
+import { AppCont } from './components/styles'
+import { Rodape } from './components/styles'
+import { Menus } from './components/styles'
 
-//import styled from 'styled-components';
-
-const AppCont = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  padding: 16px;
-  gap: 8px;
-`;
 
 class App extends React.Component {
   // estado
   state = {
-    valorMaximo: "",
-    valorMinimo: "",
-    buscaPorNome: "",
-    cestaDeProdutos: [],
-  };
-
+    valorMaximo: '',
+    valorMinimo: '',
+    buscaPorNome: '',
+    cestaDeProdutos: []
+  }
 
   // componentDidUpdate(prevProps, prevState) {
   //   if (prevState.inputValue !== this.state.cestaDeProdutos)
@@ -54,7 +52,7 @@ class App extends React.Component {
   //   this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
   // }
 
-  adicionaAoCarrinho = (props) => {
+  adicionaAoCarrinho = props => {
     const AdicionaProduto = {
       id: this.state.cestaDeProdutos,
       nome: this.state.cestaDeProdutos,
@@ -62,40 +60,48 @@ class App extends React.Component {
     }
     const novaCesta = [...this.state.cestaDeProdutos, AdicionaProduto]
     this.setState({ cestaDeProdutos: novaCesta })
-    console.log("ok produto encestado!!")
-  //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
-   }
+    console.log('ok produto encestado!!')
+    //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
+  }
   removeDoCarrinho = id => {
-
     // tentativa de apagar carrinho
 
     const novaCesta = this.state.cestaDeProdutos.filter(nome => {
-      return id !== nome.id;
-    });
+      return id !== nome.id
+    })
 
-    this.setState({ cestaDeProdutos: novaCesta });
-  };
+    this.setState({ cestaDeProdutos: novaCesta })
+  }
 
   render() {
     // filtros e map
-    
+
     return (
-
-      <AppCont>
-        <div>
-
-          <Filtro />
-        </div>
-        <div>
-          <Produtos />
-        </div>
-        <div>
-          <Carrinho />
- 
-        </div>
-      </AppCont>
-    );
+  <ContainerGeral>
+    <Main>
+      <div>SpaceShop</div>
+      <Menus>
+      <div>Athos</div>
+      <div>Rafael</div>
+      <div>Ricardo</div>
+      </Menus>
+    </Main>
+        <AppCont>
+          <Left>
+            <Filtro />
+          </Left>
+          <Middle>
+            <Produtos />
+          </Middle>
+          <Right>
+            <Carrinho />
+          </Right>
+        </AppCont>
+        <Rodape>
+        © #Joy - 2021 - 2022 - Labenu
+        </Rodape>
+  </ContainerGeral>
+    )
   }
-
 }
-export default App;
+export default App
