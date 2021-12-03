@@ -11,9 +11,6 @@ import { AppCont } from './components/styles'
 import { Rodape } from './components/styles'
 import { Menus } from './components/styles'
 
-
-
-
 class App extends React.Component {
   // estado
   state = {
@@ -92,7 +89,7 @@ class App extends React.Component {
     })
   }
 
-   componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.naves !== this.state.naves)
       localStorage.setItem("cesta", this.state.naves)
     console.log("cestaDeProdutos salva")
@@ -116,7 +113,7 @@ class App extends React.Component {
 
   // //enviar JSON quando adicionar carrinho
   componentDidMount() {
-  //  this.adicionaAoCarrinho();
+    //  this.adicionaAoCarrinho();
     const idLS = localStorage.getItem("id") || "";
     const nomeLS = localStorage.getItem("nome") || "";
     const precoLS = localStorage.getItem("preco") || "";
@@ -132,7 +129,7 @@ class App extends React.Component {
     const novasNaves = [...this.state.naves, AdicionaNave]
     this.setState({ naves: novasNaves })
     console.log('ok produto encestado!!')
-      localStorage.setItem("Lista-Foguetes", JSON.stringify(novasNaves));
+    localStorage.setItem("Lista-Foguetes", JSON.stringify(novasNaves));
   }
   removeDoCarrinho = id => {
     // tentativa de apagar carrinho
@@ -167,7 +164,6 @@ class App extends React.Component {
         }
       })
 
-
     return (
       <ContainerGeral>
         <Main>
@@ -191,10 +187,7 @@ class App extends React.Component {
               valorMaximo={this.state.valorMaximo}
               parametroOrdenacao={this.state.parametroOrdenacao}
               ordem={this.state.ordem}
-
             />
-
-
           </Left>
           <Middle>
             <Produtos

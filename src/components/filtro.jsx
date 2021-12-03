@@ -22,6 +22,7 @@ export class Filtro extends React.Component {
 
   render() {
     return <ContainerFiltro>
+      
       <div>
         <h3>Filtros</h3> <br />
       </div>
