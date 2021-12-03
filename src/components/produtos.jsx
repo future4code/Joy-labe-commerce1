@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import listaNaves from "../data/naves.json"
-import  { Itens }   from './CardProdutos/CardProduto';
+
+import { Itens } from './CardProdutos/CardProduto';
 
 const ContainerProduto = styled.div`
 
@@ -20,31 +20,47 @@ const GradeProdutos = styled.div`
   gap: 16px;
   padding: 16px;
 `
+export class Produtos extends React.Component {
 
-export class Produtos extends React.Component{
-  
-  state = {
-    naves: listaNaves
+  // state = {
+  //   naves: listaNaves
+  // }
+
+  render() {
+
+    return <ContainerProduto>
+      <HeaderProduto>
+        <p>Quantidade de produtos: </p>
+        <span>
+          <label for="ordenacao">Ordenação: </label>
+          <select
+            name="ordenacao"
+            value={this.props.parametroOrdenacao}
+            onChange={this.props.atualizaParametroOrdenacao}
+          >
+            <option value="nome">Título</option>
+            <option value="preco">Preço</option>
+          </select>
+        </span>
+
+        <select
+          name="ordem"
+          value={this.props.ordem}
+          onChange={this.props.atualizaOrdem}
+        >
+          <option value={1}>Crescente</option>
+          <option value={-1}>Decrescente</option>
+
+        </select>
+      </HeaderProduto>
+      <GradeProdutos>
+        {this.props.listaFiltrada
+        .map(nave => {
+          return <Itens key={nave.id} nave={nave} />
+        })}
+
+        
+      </GradeProdutos>
+    </ContainerProduto>
   }
-
-render(){
-
-  return <ContainerProduto>
-  <HeaderProduto>
-    <p>Quantidade de produtos: </p>
-    <label>
-      Ordenação:
-      <select>
-        <option value={'CRESCENTE'}>Crescente</option>
-        <option value={'DECRESCENTE'}>Decrescente</option>
-      </select>
-    </label>
-  </HeaderProduto>
-  <GradeProdutos>
-     {this.state.naves.map(nave => {
-       return <Itens key={nave.id} nave={nave} />
-     })}
-  </GradeProdutos>
-</ContainerProduto>
-}
 }
