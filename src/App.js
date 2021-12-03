@@ -146,12 +146,12 @@ class App extends React.Component {
   // adicionado para teste
   adicionaAoCarrinho =(item) =>{
     const novaNave = [...this.state.naves, item]
-    this.setState({nave:novaNave})}
+    this.setState({naves:novaNave});}
     
     
-    removeDoCarrinho  =(item) =>{
-    const novaNave = this.state.naves.filter((iten) => item.id !== id);
-    this.setState({nave:novaNave})}
+    removeDoCarrinho =(item,id)=> {
+    const novaNave = this.state.naves.filter((item) => item.id !== id);
+    this.setState({naves:novaNave});}
 
   render() {
     // filtros e map
@@ -212,7 +212,8 @@ class App extends React.Component {
           <Right>
             
             <Carrinho 
-            naves={naves}
+            adicionaAoCarrinho={this.state.naves}
+            removeDoCarrinho={this.state.naves}
             />
           </Right>
         </AppCont>
