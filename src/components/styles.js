@@ -24,7 +24,7 @@ justify-content: space-between;
 `
 
 export const Left = styled.div`
-  width: 80%;
+  width: 100%;
 `
 export const Middle = styled.div`
 flex-grow: 1;
