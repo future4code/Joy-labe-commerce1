@@ -123,27 +123,35 @@ class App extends React.Component {
     this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
   }
 
-  adicionaAoCarrinho = (props) => {
-    const AdicionaNave = {
-      id: this.state.naves,
-      nome: this.state.naves,
-      preco: this.state.naves
-    }
-    const novasNaves = [...this.state.naves, AdicionaNave]
-    this.setState({ naves: novasNaves })
-    console.log('ok produto encestado!!')
-      localStorage.setItem("Lista-Foguetes", JSON.stringify(novasNaves));
-  }
-  removeDoCarrinho = id => {
-    // tentativa de apagar carrinho
+  // adicionaAoCarrinho = (props) => {
+  //   const AdicionaNave = {
+  //     id: this.state.naves,
+  //     nome: this.state.naves,
+  //     preco: this.state.naves
+  //   }
+  //   const novasNaves = [...this.state.naves, AdicionaNave]
+  //   this.setState({ naves: novasNaves })
+  //   console.log('ok produto encestado!!')
+  //     localStorage.setItem("Lista-Foguetes", JSON.stringify(novasNaves));
+  // }
+  // removeDoCarrinho = id => {
+  //   // tentativa de apagar carrinho
 
-    const novasNaves = this.state.naves.filter(nome => {
-      return id !== nome.id
-    })
+  //   const novasNaves = this.state.naves.filter(nome => {
+  //     return id !== nome.id
+  //   })
 
-    this.setState({ naves: novasNaves })
-  }
-
+  //   this.setState({ naves: novasNaves })
+  // }
+  // adicionado para teste
+  adicionaAoCarrinho =(item) =>{
+    const novaNave = [...this.state.naves, item]
+    this.setState({nave:novaNave})}
+    
+    
+    removeDoCarrinho  =(item) =>{
+    const novaNave = this.state.naves.filter((iten) => item.id !== id);
+    this.setState({nave:novaNave})}
 
   render() {
     // filtros e map
