@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import naves from "../App"
 
 const ContainerCarrinho = styled.div`
 border-radius:10px;
@@ -13,6 +13,12 @@ export class Carrinho extends React.Component {
 
 
   render() {
+
+    const navesList = naves.map((item)=>{
+      return(
+      <p key={item.name} onClick={() => this.adicionaAoCarrinho(item)}>
+      {item.nome}, {item.preco}</p>
+      )})
 
     return (
       <ContainerCarrinho>
