@@ -210,7 +210,10 @@ class App extends React.Component {
             />
           </Middle>
           <Right>
-            <Carrinho />
+            
+            <Carrinho 
+            naves={naves}
+            />
           </Right>
         </AppCont>
         <Rodape>
