@@ -92,66 +92,58 @@ class App extends React.Component {
     })
   }
 
-   componentDidUpdate(prevProps, prevState) {
-    if (prevState.naves !== this.state.naves)
-      localStorage.setItem("cesta", this.state.naves)
-    console.log("cestaDeProdutos salva")
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.inputValue !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos)
+  //   console.log("cestaDeProdutos salva")
 
-    if (prevState.filtro !== this.state.naves)
-      localStorage.setItem("naves-filtro", this.state.naves)
-    console.log("status naves")
+  //   if (prevState.filtro !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos)
+  //   console.log("status cesta")
 
-    if (prevState.naves !== this.state.naves)
-      localStorage.setItem("naves-id", this.state.naves.id)
-    console.log("array")
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos.id)
+  //   console.log("array")
 
-    if (prevState.naves !== this.state.naves)
-      localStorage.setItem("naves-nome", this.state.naves.nome)
-    console.log("array")
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("cesta", this.state.cestaDeProdutos.nome)
+  //   console.log("array")
 
-    if (prevState.naves !== this.state.naves)
-      localStorage.setItem("naves-preco", this.state.naves.preco)
-    console.log("array")
-  };
+  //   if (prevState.tarefas !== this.state.cestaDeProdutos)
+  //     localStorage.setItem("tarefa", this.state.cestaDeProdutos.preco)
+  //   console.log("array")
+  // };
 
   // //enviar JSON quando adicionar carrinho
-  componentDidMount() {
-  //  this.adicionaAoCarrinho();
-    const idLS = localStorage.getItem("id") || "";
-    const nomeLS = localStorage.getItem("nome") || "";
-    const precoLS = localStorage.getItem("preco") || "";
-    this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
+  // componentDidMount() {
+  //   this.adicionaAoCarrinho();
+  //   const idLS = localStorage.getItem("id") || "";
+  //   const nomeLS = localStorage.getItem("nome") || "";
+  //   const precoLS = localStorage.getItem("preco") || "";
+  //   this.setState({ id: idLS, nome: nomeLS, preco: precoLS });
+  // }
+
+  adicionaAoCarrinho = props => {
+    const AdicionaProduto = {
+      id: this.state.cestaDeProdutos,
+      nome: this.state.cestaDeProdutos,
+      preco: this.state.cestaDeProdutos
+    }
+    const novaCesta = [...this.state.cestaDeProdutos, AdicionaProduto]
+    this.setState({ cestaDeProdutos: novaCesta })
+    console.log('ok produto encestado!!')
+    //   localStorage.setItem("Cesta-De-Produtos", JSON.stringify(novaCesta));
+  }
+  removeDoCarrinho = id => {
+    // tentativa de apagar carrinho
+
+    const novaCesta = this.state.cestaDeProdutos.filter(nome => {
+      return id !== nome.id
+    })
+
+    this.setState({ cestaDeProdutos: novaCesta })
   }
 
-  // adicionaAoCarrinho = (props) => {
-  //   const AdicionaNave = {
-  //     id: this.state.naves,
-  //     nome: this.state.naves,
-  //     preco: this.state.naves
-  //   }
-  //   const novasNaves = [...this.state.naves, AdicionaNave]
-  //   this.setState({ naves: novasNaves })
-  //   console.log('ok produto encestado!!')
-  //     localStorage.setItem("Lista-Foguetes", JSON.stringify(novasNaves));
-  // }
-  // removeDoCarrinho = id => {
-  //   // tentativa de apagar carrinho
-
-  //   const novasNaves = this.state.naves.filter(nome => {
-  //     return id !== nome.id
-  //   })
-
-  //   this.setState({ naves: novasNaves })
-  // }
-  // adicionado para teste
-  adicionaAoCarrinho =(item) =>{
-    const novaNave = [...this.state.naves, item]
-    this.setState({naves:novaNave});}
-    
-    
-    removeDoCarrinho =(item,id)=> {
-    const novaNave = this.state.naves.filter((item) => item.id !== id);
-    this.setState({naves:novaNave});}
 
   render() {
     // filtros e map
@@ -210,11 +202,7 @@ class App extends React.Component {
             />
           </Middle>
           <Right>
-            
-            <Carrinho 
-            adicionaAoCarrinho={this.state.naves}
-            removeDoCarrinho={this.state.naves}
-            />
+            <Carrinho />
           </Right>
         </AppCont>
         <Rodape>
