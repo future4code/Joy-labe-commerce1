@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {  CardDoBotao} from "./CardProdutos/style";
+import { CardDoBotao } from "./CardProdutos/style";
 
 const Container = styled.div`
   border-radius: 10px;
@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 
 export class Carrinho extends React.Component {
+  
   render() {
     const renderList = this.props.naves.map((item) => {
       return (
