@@ -6,6 +6,9 @@ export const ContainerGeral = styled.div`
   Height: 100%;
 `
 export const Main = styled.div`
+  font-family: roboto;
+  font-size:4vh;
+  color: white;
   display:flex;
   Height: 50px;
   flex-grow: 1;
@@ -18,7 +21,6 @@ export const Main = styled.div`
 export const Menus = styled.div`
 display:flex;
 width: 300px;
-background-color: red;
 padding: 10px;
 justify-content: space-between;
 `
@@ -42,11 +44,32 @@ export const AppCont = styled.div`
 
 export const Rodape = styled.div`
 display:flex;
-position: relative;
+position: absolute;
+top: 95.4%;
 height: 40px;
 width: 100%;
 flex-grow: 1;
 flex-direction: row;
 justify-content: center;
 background-color: DeepSkyBlue;
+`
+
+export const Users = styled.button`
+background-color: LightSkyBlue;
+height: 30px;
+width: 100px;
+text-align:center;
+border-radius: 20px;
+cursor:pointer;
+
+:active{
+  background:DarkBlue;
+  color: #FDFDFD;
+  border: 2% solid #FDFDFD;
+  text-decoration: none
+}
+:hover {
+    background-color: LightBlue;
+  }
+ 
 `

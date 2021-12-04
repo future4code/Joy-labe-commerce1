@@ -10,8 +10,7 @@ import { Right } from './components/styles'
 import { AppCont } from './components/styles'
 import { Rodape } from './components/styles'
 import { Menus } from './components/styles'
-
-
+import { Users } from './components/styles'
 
 
 class App extends React.Component {
@@ -173,9 +172,9 @@ class App extends React.Component {
         <Main>
           <div>SpaceShop</div>
           <Menus>
-            <div>Athos</div>
-            <div>Rafael</div>
-            <div>Ricardo</div>
+            <Users><a href="https://www.linkedin.com/in/athos-de-oliveira-867431165/" target="/">Athos</a></Users>
+            <Users><a href="https://www.linkedin.com/in/rafael-blasques-quarezemin-590b5b21a/" target="/">Rafael</a></Users>
+            <Users><a href="https://www.linkedin.com/in/ricardo-rickhardwares/" target="/">Ricardo</a></Users>
           </Menus>
         </Main>
         <AppCont>
@@ -205,9 +204,11 @@ class App extends React.Component {
             <Carrinho />
           </Right>
         </AppCont>
+        
         <Rodape>
           © #Joy - 2021 - 2022 - Labenu
         </Rodape>
+        
       </ContainerGeral>
     )
   }
