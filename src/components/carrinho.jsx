@@ -1,37 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
-// import naves from "../App"
-import { Itens } from './CardProdutos/CardProduto';
+import React from "react";
+import styled from "styled-components";
+import {  CardDoBotao} from "./CardProdutos/style";
 
-const ContainerCarrinho = styled.div`
-border-radius:10px;
+const Container = styled.div`
+  border-radius: 10px;
   border: 2px solid black;
   padding: 10px;
 `;
 
-
 export class Carrinho extends React.Component {
-
-
   render() {
-
-    // const navesList = naves.map((item)=>{
-    //   return(
-    //   <p key={item.name} onClick={() => this.adicionaAoCarrinho()}>
-    //   {item.nome}, {item.preco}</p>
-    //   )})
-
-    return (
-      <ContainerCarrinho>
+    const renderList = this.props.naves.map((item) => {
+      return (
         <div>
-          <h3>Carrinho:</h3>
+          <p key={item.nome} />
+
+          <span>
+            {" "}
+            {item.nome}, {item.preco}{" "}
+          </span>
+          <CardDoBotao onClick={() => this.props.removeItem(item.nome)}>
+            Remover
+          </CardDoBotao>
         </div>
-       
-        <div>
-          {/* <button onClick={() => this.props.removeDoCarrinho()}>Remover</button> */}
-        </div>
-        Valor total: R$
-      </ContainerCarrinho>
-    );
+      );
+    });
+
+    return <Container>{renderList}</Container>;
   }
 }
