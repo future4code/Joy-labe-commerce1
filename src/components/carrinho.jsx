@@ -13,6 +13,7 @@ export class Carrinho extends React.Component {
     const renderList = this.props.naves.map((item) => {
       return (
         <div>
+          
           <p key={item.nome} />
 
           <span>
@@ -25,7 +26,11 @@ export class Carrinho extends React.Component {
         </div>
       );
     });
-
-    return <Container>{renderList}</Container>;
+    return <Container>
+      <h3>Carrinho</h3>
+      {renderList}
+      <p>Valor Total:</p>
+      </Container>;
+    
   }
 }
