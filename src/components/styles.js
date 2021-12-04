@@ -64,7 +64,7 @@ cursor:pointer;
 
 :active{
   background:DarkBlue;
-  color: #FDFDFD;
+  color: #FDFDFD;npm
   border: 2% solid #FDFDFD;
   text-decoration: none
 }
