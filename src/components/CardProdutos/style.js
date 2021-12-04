@@ -18,9 +18,9 @@ export const ItensProduto = styled.div`
 `
 export const PhotoProduto = styled.img`
   width: 100%;
-
 `
 export const CardDoBotao = styled.button`
   align-self: center;
   margin-top: 4px;
+  cursor:pointer;
 `
