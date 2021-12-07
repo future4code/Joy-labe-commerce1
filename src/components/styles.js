@@ -44,7 +44,9 @@ export const AppCont = styled.div`
 
 export const Rodape = styled.div`
 display:flex;
+font-family: roboto;
 position: absolute;
+align-items: center;
 top: 95.4%;
 height: 40px;
 width: 100%;

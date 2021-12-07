@@ -175,10 +175,10 @@ class App extends React.Component {
         <Main>
           <div>SpaceShop</div>
           <Menus>
-            <Users><a href="https://www.linkedin.com/in/athos-de-oliveira-867431165/" target="_blank">Athos</a>
+            <Users><a href="https://www.linkedin.com/in/athos-de-oliveira-867431165/" target="_blank" rel="noopener noreferrer">Athos</a>
             </Users>
-            <Users><a href="https://www.linkedin.com/in/rafael-blasques-quarezemin-590b5b21a/" target="_blank">Rafael</a></Users>
-            <Users><a href="https://www.linkedin.com/in/ricardo-rickhardwares/" target="_blank">Ricardo</a></Users>
+            <Users><a href="https://www.linkedin.com/in/rafael-blasques-quarezemin-590b5b21a/" target="_blank" rel="noopener noreferrer">Rafael</a></Users>
+            <Users><a href="https://www.linkedin.com/in/ricardo-rickhardwares/" target="_blank" rel="noopener noreferrer">Ricardo</a></Users>
           </Menus>
         </Main>
         <AppCont>
